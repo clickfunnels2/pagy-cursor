@@ -43,7 +43,7 @@ class Pagy
 
         collection = collection.where(sql_comparison)
       end
-      collection.reorder(pagy.order).limit(pagy.items)
+      collection.reorder(pagy.order).limit(pagy.limit)
     end
 
     def pagy_uuid_cursor_has_more?(collection, pagy)
