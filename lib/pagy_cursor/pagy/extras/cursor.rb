@@ -24,9 +24,9 @@ class Pagy
     def pagy_cursor_get_items(collection, pagy, position = nil)
       if position.present?
         sql_comparison = pagy.arel_table[pagy.primary_key].send(pagy.comparison, position)
-        collection.where(sql_comparison).reorder(pagy.order).limit(pagy.items)
+        collection.where(sql_comparison).reorder(pagy.order).limit(pagy.limit)
       else
-        collection.reorder(pagy.order).limit(pagy.items)
+        collection.reorder(pagy.order).limit(pagy.limit)
       end
     end
 

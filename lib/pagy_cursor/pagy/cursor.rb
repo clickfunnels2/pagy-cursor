@@ -8,7 +8,7 @@ class Pagy
 
     def initialize(vars)
       @vars = DEFAULT.merge(vars.delete_if { |_, v| v.nil? || v == "" })
-      @items = vars[:items] || DEFAULT[:items]
+      @limit = vars[:limit] || DEFAULT[:limit]
       @before = vars[:before]
       @after = vars[:after]
       @arel_table = vars[:arel_table]
